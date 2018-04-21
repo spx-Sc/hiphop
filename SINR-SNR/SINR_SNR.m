@@ -1,10 +1,8 @@
-%C:\Program Files\MATLAB\R2013b\cvx\MVDR
-clear all;
-clc
 
-snrinput=-20:5:50;
-monte_carloN=100;
-
+% snrinput=-20:5:50;
+% monte_carloN=100;
+snrinput=-20:10:50;
+monte_carloN=1;
 sinr=zeros(1,length(snrinput));
 sinr1=sinr;
 sinr2=sinr;

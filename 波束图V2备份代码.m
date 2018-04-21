@@ -120,13 +120,6 @@ cvx_end
 
 
 %%第五种解法
-%         sitai(1:40)=linspace(-90,90,40);
-%         sitai(41:80)=linspace(-90,-5,40);
-%         sitai(81:120)=linspace(5,90,40);
-%         for ff=1:120
-%         sitai(1:20)=linspace(-90,90,20);
-%         sitai(21:40)=linspace(-90,-5,20);
-%         sitai(41:60)=linspace(5,90,20);  
         sitai=linspace(-90,90,60);
         SteerVec_sitai=array_linerr(sitai,m)';
         
@@ -145,8 +138,7 @@ us=V_sort(:,1:sk);
 ed=D_sort(1:sk).*eye(sk);
 as=(us*us'*SteerVec_sitai')';%a向信号子空间投影
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-     %   as= SteerVec_sitai;             
-             
+
         
 
         for i=1:60
@@ -155,17 +147,9 @@ as=(us*us'*SteerVec_sitai')';%a向信号子空间投影
         end
 Rx=R;      
 
-Rxp=[real(Rx),-imag(Rx);imag(Rx),real(Rx)];   %Rxp!=Rx!!!!!!!!!!!!!
+Rxp=[real(Rx),-imag(Rx);imag(Rx),real(Rx)];   
          
-        
-        
-%         for i=1:120
-%             if abs(sitai(i))>dirta
-%                 di(i)=0;
-%             else
-%                 di=g;
-%             end
-%         end
+  
         for i=1:60
             if abs(sitai(i))>dirta
                 di(i)=0;
@@ -195,7 +179,7 @@ for K=1:Kmax
         Df(i,i)=fi(i);
     end
     %%%%%
-    ws=(Rxp+denglou*Df*denglou')\(denglou*Df*di');%%%the problem still exist.continue!
+    ws=(Rxp+denglou*Df*denglou')\(denglou*Df*di');
     yita(K)=1;
     %%%
     
