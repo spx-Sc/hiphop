@@ -2,7 +2,7 @@ clear
 clc
 % snrinput=-20:5:50;
 % monte_carloN=100;
-
+%main 没有失配 并且角度做了修改,之前有个干扰来自0度,影响试验结果,改为25度
 
 snrinput=-20:10:50;
 monte_carloN=1;
@@ -26,7 +26,7 @@ for snr_signal=snrinput %%fig=4
     for monte_carlo=1:monte_carloN
         q=4;
         sk=q-1;
-        aa=[-60, 0, 30,1]*pi/180;
+        aa=[-60, -25, 20,0]*pi/180;
         M=5;
         m=M;
         d=3e8/1.2e9/2; 
